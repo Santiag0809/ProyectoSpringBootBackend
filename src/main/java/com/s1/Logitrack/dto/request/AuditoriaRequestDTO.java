@@ -25,10 +25,10 @@ public record AuditoriaRequestDTO(
         @NotNull(message = "El ID del usuario no puede ser nulo.")
         Long usuarioId,
 
-        @Schema(description = "Valor anterior (JSON como texto)", example = "{\"nombre\":\"Cemento\"}")
+        @Schema(description = "Valor anterior en texto plano", example = "nombre: torre de computador")
         String valorAnterior,
 
-        @Schema(description = "Valor nuevo (JSON como texto)", example = "{\"nombre\":\"Cemento gris\"}")
+        @Schema(description = "Valor nuevo en texto plano", example = "nombre: cemento gris")
         String valorNuevo
 ) {
 }

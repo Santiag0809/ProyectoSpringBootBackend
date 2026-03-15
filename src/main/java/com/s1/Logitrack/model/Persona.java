@@ -21,12 +21,14 @@ public class Persona {
     @Column(nullable = false)
     private String apellido;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private Integer edad;
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String documento;
 
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @Column(nullable = false)
     private String password;

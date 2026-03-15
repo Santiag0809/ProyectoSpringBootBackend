@@ -23,6 +23,11 @@ public record PersonaRequestDTO(
         @Positive(message = "La edad debe ser positiva")
         Integer edad,
 
+        @Schema(description = "Documento de la persona",
+                example = "109822111")
+        @NotNull(message = "El documento no puede ser nulo o vacio")
+        String documento,
+
         @Schema(description = "Correo electrónico",
                 example = "juan@gmail.com")
         @NotBlank(message = "El email es obligatorio")
