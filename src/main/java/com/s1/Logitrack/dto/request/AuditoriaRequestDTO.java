@@ -17,10 +17,6 @@ public record AuditoriaRequestDTO(
         @NotNull(message = "La operación no puede ser nula.")
         TipoOperacion operacion,
 
-        @Schema(description = "Fecha y hora de la operación", example = "2026-03-12T10:30:00")
-        @NotNull(message = "La fecha no puede ser nula.")
-        LocalDateTime fecha,
-
         @Schema(description = "ID del usuario que realizó la operación", example = "1")
         @NotNull(message = "El ID del usuario no puede ser nulo.")
         Long usuarioId,

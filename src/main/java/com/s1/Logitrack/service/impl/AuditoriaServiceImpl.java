@@ -15,6 +15,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -36,6 +37,7 @@ public class AuditoriaServiceImpl implements AuditoriaService {
         Persona usuario = personaRepository.findById(dto.usuarioId())
                 .orElseThrow(() -> new EntityNotFoundException("No existe el usuario con id: " + dto.usuarioId()));
         Auditorias a = auditoriaMapper.DTOAEntidad(dto, usuario);
+        a.setFecha(LocalDateTime.now()); 
         return toDTO(auditoriaRepository.save(a));
     }
 
