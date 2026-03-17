@@ -28,6 +28,10 @@ public record PersonaRequestDTO(
         @NotNull(message = "El documento no puede ser nulo o vacio")
         String documento,
 
+        @Schema(description = "Rol de la persona", example = "TRABAJADOR")
+        @NotBlank(message = "El rol no puede estar vacío.")
+        String rol,
+
         @Schema(description = "Correo electrónico",
                 example = "juan@gmail.com")
         @NotBlank(message = "El email es obligatorio")

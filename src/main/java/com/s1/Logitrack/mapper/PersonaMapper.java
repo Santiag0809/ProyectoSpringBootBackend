@@ -17,29 +17,32 @@ public class PersonaMapper {
                 persona.getApellido(),
                 persona.getEdad(),
                 persona.getDocumento(),
-                persona.getEmail()
+                persona.getEmail(),
+                persona.getRol()
         );
     }
 
-    public Persona DTOAEntidad(PersonaRequestDTO dto){
-        if(dto == null) return null;
+    public Persona DTOAEntidad(PersonaRequestDTO dto) {
+        if (dto == null) return null;
         Persona p = new Persona();
         p.setNombre(dto.nombre());
         p.setApellido(dto.apellido());
         p.setEdad(dto.edad());
-        p.setDocumento(dto.documento()); // ← esto faltaba
+        p.setDocumento(dto.documento());
         p.setEmail(dto.email());
         p.setPassword(dto.password());
+        p.setRol(dto.rol());
         return p;
     }
 
-    public void actualizarEntidadDesdeDTO(Persona p, PersonaRequestDTO dto){
-        if(dto == null || p == null) return;
-        p.setNombre(dto.nombre());
-        p.setApellido(dto.apellido());
-        p.setEdad(dto.edad());
-        p.setDocumento(dto.documento()); // ← esto faltaba
-        p.setEmail(dto.email());
-        p.setPassword(dto.password());
+    public void actualizarEntidadDesdeDTO(Persona persona, PersonaRequestDTO dto) {
+        if (persona == null || dto == null) return;
+        persona.setNombre(dto.nombre());
+        persona.setApellido(dto.apellido());
+        persona.setEdad(dto.edad());
+        persona.setDocumento(dto.documento());
+        persona.setEmail(dto.email());
+        persona.setPassword(dto.password());
+        persona.setRol(dto.rol());
     }
 }

@@ -37,7 +37,7 @@ public class AuditoriaServiceImpl implements AuditoriaService {
         Persona usuario = personaRepository.findById(dto.usuarioId())
                 .orElseThrow(() -> new EntityNotFoundException("No existe el usuario con id: " + dto.usuarioId()));
         Auditorias a = auditoriaMapper.DTOAEntidad(dto, usuario);
-        a.setFecha(LocalDateTime.now()); 
+        a.setFecha(LocalDateTime.now());
         return toDTO(auditoriaRepository.save(a));
     }
 

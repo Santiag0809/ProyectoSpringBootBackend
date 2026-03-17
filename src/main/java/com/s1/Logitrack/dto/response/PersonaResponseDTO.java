@@ -6,5 +6,6 @@ public record PersonaResponseDTO(
         String apellido,
         Integer edad,
         String documento,
-        String email
+        String email,
+        String rol
 ) {}
